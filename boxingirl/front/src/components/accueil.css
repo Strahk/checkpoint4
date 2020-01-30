@@ -1,0 +1,25 @@
+.acceuil-container {
+}
+
+.button-accueil {
+padding: 2em;
+}
+
+link:visited {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+link:hover {
+  text-decoration: underline;
+  color: aliceblue;
+}
+
+link:link {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+link {
+  color: aliceblue;
+}

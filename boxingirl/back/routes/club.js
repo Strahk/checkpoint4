@@ -7,6 +7,7 @@ const router = express.Router();
 router.post('/', (req, res) => {
   const formData = req.body;
   connection.query('INSERT INTO Club SET ?', formData, err => {
+    console.log('test ', err)
     if (err) {
       res.status(500).send("Echec de la sauvegarde des informations du club");
     } else {
