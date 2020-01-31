@@ -7,7 +7,6 @@ const router = express.Router();
 router.post('/', (req, res) => {
   const formData = req.body;
   connection.query('INSERT INTO Club SET ?', formData, err => {
-    console.log('test ', err)
     if (err) {
       res.status(500).send("Echec de la sauvegarde des informations du club");
     } else {
@@ -28,10 +27,12 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:id', (req, res) => {
-  const query = 'SELECT * FROM Club WHERE id_club = ?';
+  const id_club = req.params.id;
+  const query = `SELECT * FROM Club WHERE id_club = ${id_club}`;
   connection.query(query, (err, results) => {
+    console.log('test ', err);
     if (err) {
-      res.status(500).send("Erreur lors de l'affichage des clubs");
+      res.status(500).send("Erreur lors de l'affichage de ce club");
     } else {
       res.json(results);
     }
